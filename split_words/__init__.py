@@ -49,10 +49,11 @@ def split(text: str) -> str:
 
     # Backtrack to recover the minimal-cost string.
     out = []
+    text_length = len(text)
     while text_length > 0:
-        c, k = best_match(i)
-        assert c == cost[i]
-        out.append(text[i - k : i])
+        c, k = best_match(text_length)
+        assert c == cost[text_length]
+        out.append(text[text_length - k : text_length])
         text_length -= k
 
     return " ".join(reversed(out))
