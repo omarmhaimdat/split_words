@@ -1,11 +1,7 @@
 """
 Split a text into words.
 """
-
-"""
-Split a text into words.
-"""
-
+import os
 from math import log
 
 def get_cost_dict(file_path: str) -> dict:
@@ -25,7 +21,7 @@ def get_cost_dict(file_path: str) -> dict:
     return wordcost, maxword
 
 
-wordcost, maxword = get_cost_dict("corpus.txt")
+wordcost, maxword = get_cost_dict(os.path.join(os.path.dirname(__file__), "corpus.txt"))
 
 
 
