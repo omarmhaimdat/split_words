@@ -1,7 +1,7 @@
 from setuptools import setup
 import setuptools
 
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 DESCRIPTION = "A Python package for splitting text into sentences."
 
 setup(
@@ -18,4 +18,5 @@ setup(
         "Programming Language :: Python :: 3.8",
     ],
     python_requires=">=3.6",
+    include_package_data=True,
 )
