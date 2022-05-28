@@ -1,1 +1,1 @@
-include *.txt
+include split_words/corpus.txt
