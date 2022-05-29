@@ -53,7 +53,7 @@ def split(text: str) -> str:
     while text_length > 0:
         c, k = best_match(text_length)
         assert c == cost[text_length]
-        out.append(text[text_length - k : text_length])
+        out.append(text[text_length - k : i])
         text_length -= k
 
     return " ".join(reversed(out))
