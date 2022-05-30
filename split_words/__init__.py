@@ -56,5 +56,3 @@ def split(text: str) -> str:
         text_length -= k
 
     return " ".join(reversed(out))
-
-print(split("helloworld"))
