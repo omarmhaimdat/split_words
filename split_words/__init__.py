@@ -30,7 +30,6 @@ def split(text: str) -> str:
     Uses dynamic programming to infer the location of spaces in a string
     without spaces.
     """
-    text_length = len(text)
 
     # Find the best match for the i first characters, assuming cost has
     # been built for the i-1 first characters.
@@ -43,7 +42,7 @@ def split(text: str) -> str:
 
     # Build the cost array.
     cost = [0]
-    for i in range(1, text_length + 1):
+    for i in range(1, len(text) + 1):
         c, k = best_match(i)
         cost.append(c)
 
@@ -53,7 +52,9 @@ def split(text: str) -> str:
     while text_length > 0:
         c, k = best_match(text_length)
         assert c == cost[text_length]
-        out.append(text[text_length - k : i])
+        out.append(text[text_length - k : text_length])
         text_length -= k
 
     return " ".join(reversed(out))
+
+print(split("helloworld"))
